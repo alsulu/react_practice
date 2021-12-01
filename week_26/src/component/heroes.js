@@ -1,3 +1,5 @@
+import React from 'react';
+
 function Heroes(props) {
     return (
         <div className="superHero">
@@ -8,7 +10,7 @@ function Heroes(props) {
             <p><span className="name">Род деятельности:</span> {props.work.join(", ")}</p>
             <p><span className="name">Друзья:</span> {props.friends.join(", ")}</p>
             <p><span className="name">Суперспособности:</span> {props.superPowers.join(", ")}</p>
-            <p className="description"><span className="name">Описание:</span> {props.description.replace(/%/g, "<br><br>")}</p>
+            <p className="description"><span className="name">Описание:</span> {props.description}</p>
         </div>
     )
 }
