@@ -1,0 +1,10 @@
+.btn-lang {
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+    font-size: 14px;
+    background-color: rgb(66, 66, 99);
+    color: white;
+    margin: 0 3px;
+    padding: 0 10px;
+}
