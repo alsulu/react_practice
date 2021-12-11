@@ -9,7 +9,7 @@ let CardCont = () => {
             <Title title="Карточки" />
             <div className={styles.cards}>
                 {data.map(word =>
-                    <Card word={word.english} transcription={word.transcription} translation={word.russian} />
+                    <Card key={word.id} word={word.english} transcription={word.transcription} translation={word.russian} />
                 )}
             </div>
         </div>

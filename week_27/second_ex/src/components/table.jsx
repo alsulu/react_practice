@@ -8,15 +8,17 @@ let Table = () => {
         <div className={styles.table} id="list">
             <Title title="Слова" />
             <table>
-                <tr>
-                    <th>Слово</th>
-                    <th>Транскрипция</th>
-                    <th>Перевод</th>
-                    <th />
-                </tr>
-                {data.map(word =>
-                    <Words key={word.id} word={word.english} transcription={word.transcription} translation={word.russian} edit={word.edit} />
-                )}
+                <tbody>
+                    <tr>
+                        <th>Слово</th>
+                        <th>Транскрипция</th>
+                        <th>Перевод</th>
+                        <th />
+                    </tr>
+                    {data.map(word =>
+                        <Words key={word.id} word={word.english} transcription={word.transcription} translation={word.russian} edit={word.edit} />
+                    )}
+                </tbody>
             </table>
         </div>
     );
