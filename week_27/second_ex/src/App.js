@@ -4,7 +4,7 @@ import Footer from './components/footer';
 import Table from './components/table';
 import 'normalize.css';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <Header />
