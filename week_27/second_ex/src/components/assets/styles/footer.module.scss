@@ -1,0 +1,19 @@
+@import './variables.scss';
+
+.footer {
+    background-color: rgb(100, 100, 100);
+    color: white;
+    font-family: $font;
+    height: 110px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    justify-content: center;
+    padding-bottom: 10px;
+
+    h4,
+    p {
+        margin: 0;
+        font-size: 16px;
+    }
+}
