@@ -1,10 +1,12 @@
-import { data } from '../data/data';
 import Words from './words';
+import Title from './title';
 import styles from './assets/styles/table.module.scss';
+import { data } from '../data/data';
 
-let Table = (props) => {
+let Table = () => {
     return (
-        <div className={styles.table}>
+        <div className={styles.table} id="list">
+            <Title title="Слова" />
             <table>
                 <tr>
                     <th>Слово</th>

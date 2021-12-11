@@ -1,8 +1,8 @@
-import React from 'react';
+import styles from './assets/styles/title.module.scss'
 
 let Title = (props) => {
     return (
-        <h2>{props.title}</h2>
+        <h2 className={styles.title}>{props.title}</h2>
     );
 }
 

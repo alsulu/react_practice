@@ -2,15 +2,21 @@
 
 .header {
     background-color: lightgray;
+    height: 60px;
 
     div {
-        width: 70vw;
+        width: $widthLarger;
         margin: auto;
         display: flex;
         flex-direction: row;
         column-gap: 50px;
         font-family: $font;
         font-size: 16px;
+    }
+
+    p {
+        line-height: 60px;
+        margin: 0;
     }
 
     a {
@@ -21,5 +27,14 @@
         &:visited {
             color: black;
         }
+
+        &:hover {
+            background-color: rgba(197, 187, 189, 0.377);
+            border-bottom: solid 1px black;
+        }
     }
+}
+
+.title {
+    font-weight: 600;
 }

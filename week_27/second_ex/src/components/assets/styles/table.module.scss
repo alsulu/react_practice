@@ -1,21 +1,27 @@
+@import 'variables.scss';
+
 .table {
+    width: $width;
+    margin: 60px auto 0;
+}
 
-    th,
-    td {
-        border: 1px solid gray;
-        width: 25%;
-        height: 40px;
-        padding: 0 10px;
+th,
+td {
+    border: 1px solid gray;
+    width: 25%;
+    height: 40px;
+    padding: 0 10px;
+    font-family: $font;
 
-        input {
-            font-size: 15px;
-        }
+    input {
+        font-size: 15px;
+        font-family: $font;
     }
+}
 
-    table {
-        border-spacing: 0;
-        border-collapse: collapse;
-        width: 65vw;
-        margin: auto;
-    }
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+    width: $width;
+    margin: auto;
 }

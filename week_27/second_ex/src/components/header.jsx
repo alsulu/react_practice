@@ -5,7 +5,7 @@ const Header = () => {
     return (
         <nav className={styles.header}>
             <div>
-                <p>Изучайте английский по карточкам вместе с нами!</p>
+                <p className={styles.title}>Изучайте английский по карточкам вместе с нами!</p>
                 <p><a href="#list">Список слов</a></p>
                 <p><a href="#cards">Карточки</a></p>
             </div>

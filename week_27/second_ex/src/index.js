@@ -3,6 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import WebFont from 'webfontloader';
+
+WebFont.load({
+  google: {
+    families: ['Montserrat: 400,500,600']
+  }
+});
 
 ReactDOM.render(
   <React.StrictMode>

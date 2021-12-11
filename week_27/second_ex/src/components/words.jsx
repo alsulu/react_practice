@@ -12,8 +12,7 @@ let Words = (props) => {
                     <td className={styles.edit}><input type="text" value={props.translation} /></td>
                     <td className={classnames(styles.buttons, styles.edit)}>
                         <button className={styles.btnSave}>Сохранить</button>
-                        <button className={styles.btnEdit} disabled>+</button>
-                        <button className={styles.btnDelete}>-</button>
+                        <button className={styles.btnCancel}>Отменить</button>
                     </td>
                 </React.Fragment>
                 : <React.Fragment>
@@ -21,8 +20,8 @@ let Words = (props) => {
                     <td>{props.transcription}</td>
                     <td>{props.translation}</td>
                     <td className={styles.buttons}>
-                        <button className={styles.btnEdit}>+</button>
-                        <button className={styles.btnDelete}>-</button>
+                        <button className={styles.btnEdit}><img src="https://cdn-icons-png.flaticon.com/512/51/51639.png" alt="редактировать" /></button>
+                        <button className={styles.btnDelete}><img src="http://s1.iconbird.com/ico/2013/9/452/w448h5121380477116trash.png" alt="удалить" /></button>
                     </td>
                 </React.Fragment>
             }

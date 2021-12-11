@@ -1,0 +1,15 @@
+@import 'variables.scss';
+
+.cards_container {
+    width: $width;
+    margin: 60px auto;
+}
+
+.cards {
+    width: $width;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 20px;
+    justify-items: center;
+}
