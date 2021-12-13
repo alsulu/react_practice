@@ -3,7 +3,7 @@ import Card from './cards';
 import styles from './assets/styles/card_cont.module.scss';
 import { data } from '../data/data';
 
-let CardCont = () => {
+const CardCont = () => {
     return (
         <div className={styles.cards_container} id="cards">
             <Title title="Карточки" />

@@ -1,9 +1,10 @@
-import Words from './words';
+import React, { useState } from 'react';
+import Rows from './rows';
 import Title from './title';
 import styles from './assets/styles/table.module.scss';
 import { data } from '../data/data';
 
-let Table = () => {
+const Table = () => {
     return (
         <div className={styles.table} id="list">
             <Title title="Слова" />
@@ -16,7 +17,7 @@ let Table = () => {
                         <th />
                     </tr>
                     {data.map(word =>
-                        <Words key={word.id} word={word.english} transcription={word.transcription} translation={word.russian} edit={word.edit} />
+                        <Rows key={word.id} word={word.english} transcription={word.transcription} translation={word.russian} />
                     )}
                 </tbody>
             </table>

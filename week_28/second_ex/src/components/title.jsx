@@ -1,6 +1,6 @@
 import styles from './assets/styles/title.module.scss'
 
-let Title = (props) => {
+const Title = (props) => {
     return (
         <h2 className={styles.title}>{props.title}</h2>
     );

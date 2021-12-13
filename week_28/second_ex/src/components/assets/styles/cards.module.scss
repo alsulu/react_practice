@@ -1,7 +1,7 @@
 @import 'variables.scss';
 
 .card {
-    width: 200px;
+    width: 210px;
     height: 160px;
     border: 1px solid gray;
     border-radius: 5px;
@@ -10,14 +10,46 @@
     flex-direction: column;
     justify-content: center;
 
-    div {
-        p {
-            font-family: $font;
-        }
-    }
+}
 
+.word,
+.transcription {
+    font-family: $font;
+    margin: 0 0 10px 0;
 }
 
 .word {
     font-weight: 600;
+}
+
+.translation {
+    margin: 20px 0 0 0;
+    font-family: $font;
+    color: rgb(121, 36, 121);
+    font-weight: 600;
+}
+
+.buttonShow {
+    margin-top: 10px;
+    font-size: 13px;
+    font-weight: 500;
+    font-family: $font;
+    border: none;
+    border-radius: 3px;
+    background-color: rgb(248, 227, 230);
+    height: 30px;
+    padding: 0 12px;
+}
+
+.buttonCancel {
+    font-size: 12px;
+    margin: 0;
+    border: none;
+    color: rgb(65, 65, 65);
+    background-color: white;
+    font-family: $font;
+
+    &:hover {
+        text-decoration: underline;
+    }
 }
