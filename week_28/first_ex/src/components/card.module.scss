@@ -1,0 +1,88 @@
+.card {
+    display: grid;
+    grid-template-rows: 15% 45% 11% 17% 12%;
+    margin: 1px;
+    height: 340px;
+}
+
+p {
+    margin: 0;
+}
+
+.name,
+.price {
+    color: white;
+    display: grid;
+    align-items: center;
+}
+
+.price {
+    opacity: 0.8;
+    margin-top: 1px;
+    font-size: 32px;
+}
+
+.speed,
+.traffic {
+    color: rgb(70, 70, 70);
+    font-size: 14px;
+    display: grid;
+    align-items: center;
+}
+
+.speed {
+    background-color: lightgray;
+}
+
+.traffic {
+    background-color: rgb(177, 177, 177);
+}
+
+.month,
+.rubles {
+    font-size: 12px;
+}
+
+.rubles {
+    vertical-align: top;
+}
+
+.unlimited300 {
+    background-color: rgb(24, 24, 104);
+}
+
+.unlimited450 {
+    background-color: rgb(0, 90, 0);
+}
+
+.unlimited550 {
+    background-color: rgb(196, 21, 21);
+}
+
+.unlimited1000 {
+    background-color: black;
+}
+
+.selected {
+    height: 360px;
+    box-shadow: 0px 3px 8px 0px gray;
+}
+
+.button,
+.buttonCancel {
+    border: 2px solid lightgray;
+    border-radius: 3px;
+    color: rgb(32, 32, 32);
+}
+
+.button {
+    background-color: rgba(107, 223, 78, 0.795);
+
+    &:disabled {
+        opacity: 0.7;
+    }
+}
+
+.buttonCancel {
+    background-color: lightgray;
+}
