@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Rows from './rows';
 import Title from './title';
 import styles from './assets/styles/table.module.scss';

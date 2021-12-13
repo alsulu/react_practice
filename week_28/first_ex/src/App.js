@@ -6,7 +6,7 @@ import { data } from './data/data';
 function App() {
   return (
     <div className={styles.App}>
-      {data.map(el => <Card key={el.id} id={el.id} price={el.price} speed={el.speed} traffic={el.traffic} />)}
+      {data.map(el => <Card key={el.id} price={el.price} speed={el.speed} traffic={el.traffic} />)}
     </div>
   );
 }
