@@ -1,0 +1,27 @@
+.name {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 15px;
+    margin-top: 20px;
+    color: rebeccapurple;
+}
+
+.name,
+.text,
+.deleteBtn {
+    margin-left: 10px;
+}
+
+.new {
+    background-color: rgba(231, 208, 231, 0.445);
+}
+
+.deleteBtn {
+    margin-bottom: 7px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
