@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Title from './title';
 import LeftArrow from './leftArrow';
 import RightArrow from './rightArrow';
 import styles from './assets/styles/card_cont.module.scss';
 
-const CardCont = ({ children, onClickPrev, onClickNext, how, many, change }) => {
+const CardCont = ({ children, onClickPrev, onClickNext, how, many }) => {
     return (
         <div className={styles.cards_container} id="cards">
             <Title title="Карточки" />
