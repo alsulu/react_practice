@@ -1,0 +1,30 @@
+@import "variables.scss";
+
+.table {
+  width: $width;
+  margin: $marginCont;
+  display: flex;
+  flex-direction: column;
+}
+
+th,
+td {
+  border: 1px solid gray;
+  width: 25%;
+  height: 40px;
+  padding: 0 10px;
+  font-family: $font;
+
+  input {
+    font-size: 0.95em;
+    font-family: $font;
+    width: 100%;
+  }
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: $width;
+  margin: auto;
+}

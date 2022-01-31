@@ -1,0 +1,77 @@
+.card {
+  width: 240px;
+  height: 240px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.word,
+.transcription {
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-size: 1.2em;
+  margin: 0 0 15px 0;
+}
+
+.word {
+  font-weight: 600;
+}
+
+.translation {
+  margin: 30px 0 0 0;
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-size: 1.2em;
+  color: #792479;
+  font-weight: 600;
+}
+
+.loading {
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-size: 1.15em;
+  margin-bottom: 0;
+}
+
+.buttonShow {
+  margin-top: 10px;
+  font-size: 0.9em;
+  font-weight: 500;
+  font-family: "Montserrat", "Arial", sans-serif;
+  border: none;
+  border-radius: 3px;
+  background-color: #f8e3e6;
+  height: 33px;
+  padding: 0 15px;
+}
+
+.buttonShow:hover {
+  background-color: #f5d4d9;
+}
+
+.buttonShow:active {
+  -webkit-box-shadow: 0 0 0 1px lightgray;
+          box-shadow: 0 0 0 1px lightgray;
+}
+
+.buttonCancel {
+  font-size: 13px;
+  margin: 0;
+  border: none;
+  color: #414141;
+  background-color: white;
+  font-family: "Montserrat", "Arial", sans-serif;
+}
+
+.buttonCancel:hover {
+  text-decoration: underline;
+}
+/*# sourceMappingURL=cards.module.css.map */

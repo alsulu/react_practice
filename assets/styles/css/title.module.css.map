@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,MAAM,CAAC;EACL,WAAW,ECHN,YAAY,EAAE,OAAO,EAAE,UAAU;EDItC,WAAW,EAAE,GAAG;EAChB,UAAU,EAAE,IAAI;EAChB,aAAa,EAAE,IAAI;CACpB",
+    "sources": [
+        "../../../week_30/src/components/assets/styles/title.module.scss",
+        "../../../week_30/src/components/assets/styles/variables.scss"
+    ],
+    "names": [],
+    "file": "title.module.css"
+}

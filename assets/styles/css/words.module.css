@@ -1,0 +1,53 @@
+.btnSave,
+.btnCancel {
+  color: white;
+  font-size: 12px;
+  font-weight: 500;
+  font-family: "Montserrat", "Arial", sans-serif;
+  padding: 0 10px;
+}
+
+.btnSave {
+  background-color: #1bad1b;
+}
+
+.btnCancel {
+  background-color: #8b8a87;
+}
+
+.btnEdit {
+  background-color: #ffb428;
+  width: 30px;
+}
+
+.btnDelete {
+  background-color: #aa4040;
+  width: 30px;
+}
+
+.buttons {
+  text-align: right;
+}
+
+.buttons button {
+  border: none;
+  border-radius: 3px;
+  height: 65%;
+  margin-left: 5px;
+}
+
+.buttons button:hover, .buttons button:focus {
+  -webkit-box-shadow: 1px 1px 1px 1px lightgray;
+          box-shadow: 1px 1px 1px 1px lightgray;
+  opacity: 0.9;
+}
+
+.buttons img {
+  width: 75%;
+  vertical-align: middle;
+}
+
+.edit {
+  background-color: #f8e3e6;
+}
+/*# sourceMappingURL=words.module.css.map */

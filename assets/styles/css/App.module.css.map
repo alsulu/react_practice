@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,IAAI,CAAC;EACH,UAAU,EAAE,KAAK;EACjB,OAAO,EAAE,IAAI;EACb,kBAAkB,EAAE,aAAa;CAClC",
+    "sources": [
+        "../../../week_30/src/App.module.scss"
+    ],
+    "names": [],
+    "file": "App.module.css"
+}

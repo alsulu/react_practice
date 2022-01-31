@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,KAAK,CAAC;EACF,WAAW,EAAE,IAAI;EACjB,SAAS,EAAE,IAAI;EACf,aAAa,EAAE,IAAI;EACnB,UAAU,EAAE,IAAI;EAChB,KAAK,EAAE,aAAa;CACvB;;AAED,AAAA,KAAK;AACL,KAAK;AACL,UAAU,CAAC;EACP,WAAW,EAAE,IAAI;CACpB;;AAED,AAAA,IAAI,CAAC;EACD,gBAAgB,EAAE,0BAA0B;CAC/C;;AAED,AAAA,UAAU,CAAC;EACP,aAAa,EAAE,GAAG;EAClB,MAAM,EAAE,IAAI;EACZ,gBAAgB,EAAE,sBAAsB;CAK3C;;AARD,AAKI,UALM,AAKL,MAAM,CAAC;EACJ,eAAe,EAAE,SAAS;CAC7B",
+    "sources": [
+        "../../../week_29/first_ex/src/components/styles/comment.module.scss"
+    ],
+    "names": [],
+    "file": "comment.module.css"
+}
