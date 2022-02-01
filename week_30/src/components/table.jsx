@@ -6,7 +6,7 @@ import { data } from "../data/data";
 
 const Table = () => {
   return (
-    <div className={styles.table}>
+    <div className={styles.table_container}>
       <Title title="Слова" />
       <table>
         <tbody>
