@@ -11,6 +11,10 @@
   justify-content: center;
 }
 
+.cardOk {
+  background-color: rgb(175, 250, 175);
+}
+
 .word,
 .transcription {
   font-family: $font;
@@ -43,12 +47,12 @@
   font-family: $font;
   border: none;
   border-radius: 3px;
-  background-color: rgb(248, 227, 230);
+  background-color: rgba(248, 227, 230, 0.555);
   height: 33px;
   padding: 0 15px;
 
   &:hover {
-    background-color: rgb(245, 212, 217);
+    background-color: rgba(245, 212, 217, 0.555);
   }
 
   &:active {
@@ -57,11 +61,12 @@
 }
 
 .buttonCancel {
-  font-size: 13px;
+  font-size: 0.9em;
+  font-weight: 500;
   margin: 0;
   border: none;
-  color: rgb(65, 65, 65);
-  background-color: white;
+  color: rgb(202, 48, 48);
+  background-color: rgba(255, 255, 255, 0);
   font-family: $font;
 
   &:hover {

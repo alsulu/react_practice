@@ -7,7 +7,7 @@ import styles from "./assets/styles/card_cont.module.scss";
 const CardCont = ({ children, onClickPrev, onClickNext, how, many, count }) => {
   return (
     <div className={styles.cards_container}>
-      <Title title={`Карточки (выучено ${Number(count)} слов из ${many})`} />
+      <Title title={`Карточки (количество выученных слов: ${Number(count)} из ${many})`} />
       <div className={styles.card}>
         <LeftArrow onClick={onClickPrev} />
         {children}
