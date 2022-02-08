@@ -1,7 +1,7 @@
 import CardCont from './card_cont';
 import Card from './card';
 import { data } from '../data/data';
-import React, { useState } from 'react';
+import React, { useDebugValue, useEffect, useState, useCallback, useMemo, useRef } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { rotateInDownLeft } from 'react-animations';
 import { rotateInDownRight } from 'react-animations';
@@ -12,28 +12,35 @@ let currentCard = 0;
 
 const SelectedCard = () => {
     const [selectedCardIndex, setSelectedCardIndex] = useState(0);
-    const [updatedCard, setUpdatedCard] = useState(true);
+    const [updatedCard, setUpdatedCard] = useState(1);
+    const [count, setCount] = useState(0);
 
     const handleClickNext = () => {
         currentCard = (currentCard + 1) % data.length;
         setSelectedCardIndex(currentCard);
-        setUpdatedCard(true);
+        setUpdatedCard(1);
     }
-
     const handleClickPrev = () => {
         currentCard = (currentCard - 1 + data.length) % data.length;
         setSelectedCardIndex(currentCard);
-        setUpdatedCard(false);
+        setUpdatedCard(2);
     }
-
-    const Wrapper = ({ condition, wrapNext, wrapPrev, children }) => (
-        condition ? wrapNext(children) : wrapPrev(children)
+    const Wrapper = ({ condition1, condition2, wrapNext, wrapPrev, noWrap, children }) => (
+        condition1 ? wrapNext(children) : condition2 ? wrapPrev(children) : noWrap(children)
     )
+    const wordsRef = useRef();
+    const wordsCount = () => {
+            setCount(count+1);
+            setUpdatedCard(0)
+        }
+
+    useEffect(() => wordsRef.current.handleClick(), [count])
+    //useEffect(() => setUpdatedCard(true), [])
 
     return (
-        <CardCont onClickNext={handleClickNext} onClickPrev={handleClickPrev} how={selectedCardIndex + 1} many={data.length}>
-            <Wrapper condition={updatedCard} wrapNext={children => (<RotateInDownLeft>{children}</RotateInDownLeft>)} wrapPrev={children => (<RotateInDownRight>{children}</RotateInDownRight>)}>
-                <Card key={data[selectedCardIndex].id} word={data[selectedCardIndex].english} transcription={data[selectedCardIndex].transcription} translation={data[selectedCardIndex].russian} />
+        <CardCont onClickNext={handleClickNext} onClickPrev={handleClickPrev} how={selectedCardIndex + 1} many={data.length} count={count}>
+            <Wrapper condition1={updatedCard === 1} condition2={updatedCard === 2} wrapNext={children => (<RotateInDownLeft>{children}</RotateInDownLeft>)} wrapPrev={children => (<RotateInDownRight>{children}</RotateInDownRight>)} noWrap={children => (<React.Fragment>{children}</React.Fragment>)}>
+                <Card key={data[selectedCardIndex].id} word={data[selectedCardIndex].english} transcription={data[selectedCardIndex].transcription} translation={data[selectedCardIndex].russian} wordsCount={wordsCount} ref={wordsRef}/>
             </Wrapper>
         </CardCont>
     );

@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import styles from './assets/styles/title.module.scss'
 
 const Title = (props) => {

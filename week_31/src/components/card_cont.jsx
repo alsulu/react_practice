@@ -4,10 +4,10 @@ import LeftArrow from "./leftArrow";
 import RightArrow from "./rightArrow";
 import styles from "./assets/styles/card_cont.module.scss";
 
-const CardCont = ({ children, onClickPrev, onClickNext, how, many }) => {
+const CardCont = ({ children, onClickPrev, onClickNext, how, many, count }) => {
   return (
     <div className={styles.cards_container}>
-      <Title title="Карточки" />
+      <Title title={`Карточки (выучено ${Number(count)} слов из ${many})`} />
       <div className={styles.card}>
         <LeftArrow onClick={onClickPrev} />
         {children}
