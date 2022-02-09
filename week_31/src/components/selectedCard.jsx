@@ -1,7 +1,7 @@
 import CardCont from './CardCont';
 import Card from './Card';
 import { data } from '../data/data';
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { rotateInDownLeft } from 'react-animations';
 import { rotateInDownRight } from 'react-animations';
@@ -32,21 +32,21 @@ const SelectedCard = () => {
     //const wordsRef = useRef();
     //useEffect(() => wordsRef.current.handleClick(), [k])
 
-    const wordsCount = (e) => {
+    const wordsCount = useCallback((e) => {
         //if (!localStorage.getItem(`${e.target.dataset.id}`)) {
         setCount(count+1);
         localStorage.setItem("count", count+1)
         localStorage.setItem(`${e.target.dataset.id}`, true)
         setUpdatedCard(0);
-    }
+    }, [count])
 
-    const wordCancel = (e) => {
+    const wordCancel = useCallback((e) => {
         //if (localStorage.getItem(`${e.target.dataset.id}`)) {
         setCount(count-1);
         localStorage.setItem("count", count-1)
         localStorage.removeItem(`${e.target.dataset.id}`)
         setUpdatedCard(0);
-    }
+    }, [count])
 
     useEffect(() => {
         localStorage.getItem("count") &&

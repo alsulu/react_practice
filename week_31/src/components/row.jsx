@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState } from 'react';
 import styles from './assets/styles/rows.module.scss';
 import classnames from 'classnames';
 import useReverse from '../hooks/useReverse';

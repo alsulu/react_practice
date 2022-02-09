@@ -31,7 +31,8 @@ const Card = ({ word, transcription, translation, wordsCount, wordCancel, id, is
                             <p className={styles.translation}>{translation}</p>
                             <button className={styles.buttonCancel} ref={focusBtn} data-id={id} onClick={(e) => wordCancel(e)}>(отметить как невыученное)</button>
                         </React.Fragment>
-                        : <button className={styles.buttonShow} ref={focusBtn} data-id={id} onClick={(e) => wordsCount(e)}>Проверить</button>}
+                        : <button className={styles.buttonShow} ref={focusBtn} data-id={id} onClick={(e) => wordsCount(e)}>Проверить</button>
+                    }
                 </div>
                 : <React.Fragment>
                     <p className={styles.loading}>Пожалуйста, подождите..</p>
