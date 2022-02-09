@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, forwardRef, useImperativeHandle } from 'react';
+import React, { useEffect, useRef } from 'react';
 import ClimbingBoxLoader from "react-spinners/ClimbingBoxLoader";
 import styles from './assets/styles/cards.module.scss';
 import classnames from 'classnames';
@@ -15,18 +15,18 @@ import classnames from 'classnames';
         }
     }))*/
 
-    const Card = ({ word, transcription, translation, wordsCount, wordCancel, id, ok }) => {
+const Card = ({ word, transcription, translation, wordsCount, wordCancel, id, isLearned }) => {
 
     const focusBtn = useRef();
-    useEffect(() => focusBtn.current.focus(), []);
+    useEffect(() => focusBtn.current.focus());
 
     return (
-        <div className={classnames(styles.card, ok && styles.cardOk)}>
+        <div className={classnames(styles.card, isLearned && styles.learnedCard)}>
             {(word
                 ? <div>
                     <p className={styles.word}>{word}</p>
                     <p className={styles.transcription}>{transcription}</p>
-                    {ok
+                    {isLearned
                         ? <React.Fragment>
                             <p className={styles.translation}>{translation}</p>
                             <button className={styles.buttonCancel} ref={focusBtn} data-id={id} onClick={(e) => wordCancel(e)}>(отметить как невыученное)</button>

@@ -1,6 +1,6 @@
 import React from "react";
-import Row from "./row";
-import Title from "./title";
+import Row from "./Row";
+import Title from "./Title";
 import styles from "./assets/styles/table.module.scss";
 import { data } from "../data/data";
 

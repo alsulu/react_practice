@@ -16,6 +16,10 @@
           justify-content: center;
 }
 
+.learnedCard {
+  background-color: rgba(175, 250, 175, 0.788);
+}
+
 .word,
 .transcription {
   font-family: "Montserrat", "Arial", sans-serif;
@@ -48,13 +52,13 @@
   font-family: "Montserrat", "Arial", sans-serif;
   border: none;
   border-radius: 3px;
-  background-color: #f8e3e6;
+  background-color: rgba(248, 227, 230, 0.555);
   height: 33px;
   padding: 0 15px;
 }
 
-.buttonShow:hover {
-  background-color: #f5d4d9;
+.buttonShow:hover, .buttonShow:focus {
+  background-color: rgba(245, 212, 217, 0.555);
 }
 
 .buttonShow:active {
@@ -63,15 +67,16 @@
 }
 
 .buttonCancel {
-  font-size: 13px;
+  font-size: 0.9em;
+  font-weight: 500;
   margin: 0;
   border: none;
-  color: #414141;
-  background-color: white;
+  color: #ca3030;
+  background-color: rgba(255, 255, 255, 0);
   font-family: "Montserrat", "Arial", sans-serif;
 }
 
-.buttonCancel:hover {
+.buttonCancel:hover, .buttonCancel:focus {
   text-decoration: underline;
 }
 /*# sourceMappingURL=cards.module.css.map */

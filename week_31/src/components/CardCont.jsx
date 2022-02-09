@@ -1,7 +1,7 @@
 import React from "react";
-import Title from "./title";
-import LeftArrow from "./leftArrow";
-import RightArrow from "./rightArrow";
+import Title from "./Title";
+import LeftArrow from "./LeftArrow";
+import RightArrow from "./RightArrow";
 import styles from "./assets/styles/card_cont.module.scss";
 
 const CardCont = ({ children, onClickPrev, onClickNext, how, many, count }) => {

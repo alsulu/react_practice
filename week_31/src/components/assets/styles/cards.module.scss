@@ -11,8 +11,8 @@
   justify-content: center;
 }
 
-.cardOk {
-  background-color: rgb(175, 250, 175);
+.learnedCard {
+  background-color: rgba(175, 250, 175, 0.788);
 }
 
 .word,
@@ -51,7 +51,8 @@
   height: 33px;
   padding: 0 15px;
 
-  &:hover {
+  &:hover,
+  &:focus {
     background-color: rgba(245, 212, 217, 0.555);
   }
 
@@ -69,7 +70,8 @@
   background-color: rgba(255, 255, 255, 0);
   font-family: $font;
 
-  &:hover {
+  &:hover,
+  &:focus {
     text-decoration: underline;
   }
 }

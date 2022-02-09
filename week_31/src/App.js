@@ -1,10 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Header from "./components/header";
-import Footer from "./components/footer";
-import Table from "./components/table";
-import SelectedCard from "./components/selectedCard";
-import Error from "./components/error";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Table from "./components/Table";
+import SelectedCard from "./components/SelectedCard";
+import Error from "./components/Error";
 import styles from "./App.module.scss";
 import "normalize.css";
 

@@ -2,7 +2,7 @@
     "version": 3,
     "mappings": "",
     "sources": [
-        "../../../week_30/src/components/assets/styles/variables.scss"
+        "../../../week_31/src/components/assets/styles/variables.scss"
     ],
     "names": [],
     "file": "variables.css"
