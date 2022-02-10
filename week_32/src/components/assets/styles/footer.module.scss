@@ -1,0 +1,32 @@
+@import "./variables.scss";
+
+.footer_container {
+  width: 100%;
+  height: 100px;
+  margin: 0;
+  background-color: rgb(100, 100, 100);
+  color: white;
+  font-family: $font;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+menu {
+  padding: 0;
+}
+
+.footer {
+  width: $widthLarger;
+  margin: auto;
+
+  h4 {
+    font-size: 15x;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  p {
+    margin-bottom: 0;
+    font-size: 14px;
+  }
+}
