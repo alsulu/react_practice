@@ -12,14 +12,8 @@ td {
   border: 1px solid gray;
   width: 25%;
   height: 40px;
-  padding: 0 10px;
+  padding: 0 15px 0 10px;
   font-family: $font;
-
-  input {
-    font-size: 0.95em;
-    font-family: $font;
-    width: 100%;
-  }
 }
 
 table {
@@ -27,4 +21,17 @@ table {
   border-collapse: collapse;
   width: $width;
   margin: auto;
+}
+
+.addingBtn {
+  width: 19%;
+  background-color: rgba(192, 76, 95, 0.877);
+  color: white;
+  font-family: $font;
+  font-size: 0.95em;
+  height: 40px;
+  font-weight: 500;
+  border: 1px solid rgb(182, 92, 107);
+  border-radius: 3px;
+  margin-top: 30px;
 }

@@ -17,8 +17,8 @@ import classnames from 'classnames';
 
 const Card = memo(({ word, transcription, translation, wordsCount, wordCancel, id, isLearned }) => {
 
-    const focusBtn = useRef();
-    useEffect(() => focusBtn.current.focus());
+    const focusBtn = useRef()
+    useEffect(() => focusBtn.current.focus(), []);
 
     return (
         <div className={classnames(styles.card, isLearned && styles.learnedCard)}>
@@ -29,9 +29,9 @@ const Card = memo(({ word, transcription, translation, wordsCount, wordCancel, i
                     {isLearned
                         ? <React.Fragment>
                             <p className={styles.translation}>{translation}</p>
-                            <button className={styles.buttonCancel} ref={focusBtn} data-id={id} onClick={(e) => wordCancel(e)}>(отметить как невыученное)</button>
+                            <button className={styles.buttonCancel} ref={focusBtn} data-id={id} onClick={wordCancel}>(отметить как невыученное)</button>
                         </React.Fragment>
-                        : <button className={styles.buttonShow} ref={focusBtn} data-id={id} onClick={(e) => wordsCount(e)}>Проверить</button>
+                        : <button className={styles.buttonShow} ref={focusBtn} data-id={id} onClick={wordsCount}>Проверить</button>
                     }
                 </div>
                 : <React.Fragment>

@@ -11,6 +11,10 @@
   background-color: #1bad1b;
 }
 
+.btnSave:disabled {
+  opacity: 0.5;
+}
+
 .btnCancel {
   background-color: #8b8a87;
 }
@@ -36,7 +40,7 @@
   margin-left: 5px;
 }
 
-.buttons button:hover, .buttons button:focus {
+.buttons button:disabled[false]:hover, .buttons button:disabled[false]:focus {
   -webkit-box-shadow: 1px 1px 1px 1px lightgray;
           box-shadow: 1px 1px 1px 1px lightgray;
   opacity: 0.9;
@@ -49,5 +53,9 @@
 
 .edit {
   background-color: #f8e3e6;
+}
+
+.invalid {
+  border-color: #d33636;
 }
 /*# sourceMappingURL=rows.module.css.map */

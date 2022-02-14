@@ -1,5 +1,13 @@
 @import "variables.scss";
 
+input {
+  font-size: 0.95em;
+  font-family: $font;
+  width: 100%;
+  border-radius: 3px;
+}
+
+
 .btnSave,
 .btnCancel {
   color: white;
@@ -11,6 +19,10 @@
 
 .btnSave {
   background-color: rgb(27, 173, 27);
+
+  &:disabled {
+    opacity: 0.5;
+  }
 }
 
 .btnCancel {
@@ -36,8 +48,8 @@
     height: 65%;
     margin-left: 5px;
 
-    &:hover,
-    &:focus {
+    &:disabled[false]:hover,
+    &:disabled[false]:focus {
       box-shadow: 1px 1px 1px 1px lightgray;
       opacity: 0.9;
     }
@@ -51,4 +63,22 @@
 
 .edit {
   background-color: rgb(248, 227, 230);
+}
+
+.invalid {
+  border-color: rgb(211, 54, 54);
+}
+
+.error {
+  position: absolute;
+  background-color: rgb(212, 212, 212);
+  padding: 8px 5px;
+  font-size: 0.85em;
+  color: rgb(211, 54, 54);
+  font-weight: 500;
+  margin-top: 1px;
+  margin-left: 10px;
+  border: 0.5px rgb(163, 163, 163) solid;
+  border-radius: 3px;
+  opacity: 0.9;
 }

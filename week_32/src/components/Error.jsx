@@ -5,7 +5,7 @@ import imgError from "./assets/images/NotFound.jpg";
 import useReverse from '../hooks/useReverse';
 
 const Error = memo(() => {
-  const [shower, reverseShower] = useReverse();
+  const [shower, reverseShower] = useReverse(false);
 
   return (
     <div className={styles.error_cont}>
