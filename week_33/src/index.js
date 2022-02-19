@@ -4,6 +4,7 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import WebFont from "webfontloader";
+import { WordsContextProvider } from "./WordsContext";
 
 WebFont.load({
   google: {
@@ -12,9 +13,9 @@ WebFont.load({
 });
 
 ReactDOM.render(
-  <React.StrictMode>
+  <WordsContextProvider>
     <App />
-  </React.StrictMode>,
+  </WordsContextProvider>,
   document.getElementById("root")
 );
 

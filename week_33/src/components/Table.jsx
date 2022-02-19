@@ -1,46 +1,25 @@
-import React, { memo } from "react";
+import React, { memo, useContext, useEffect } from "react";
 import Row from "./Row";
 import Title from "./Title";
+import Error from "./Error";
 import styles from "./assets/styles/table.module.scss";
-import { data } from "../data/data";
-import AddingWord from "./AddingWord";
+import AddingWordModal from "./AddingWordModal";
 import useReverse from "../hooks/useReverse";
+import { WordsContext } from "../WordsContext";
+import Loading from "./Loading";
 
 const Table = memo(() => {
+  const { words, isLoading, getWords, error, errorMessage} = useContext(WordsContext);
   const [adding, reverseAdding] = useReverse(false);
+  
+  useEffect(() => getWords(), [])
 
-  //const [dataWords, setDataWords] = useState(data);
-  //const { wordRef, transcriptionRef, translationRef } = useRef();
-  /*const handleAdd = (e, values) => {
-    setDataWords({
-      ...dataWords,
-        english: values.word,
-        transcription: values.transcription,
-        russian: values.translation
-    })
-  }*/
+  if (isLoading)
+    return <Loading />
 
-  //const ref = useRef();
+  if (error)
+    return <Error title={errorMessage} />
 
-    if (!localStorage.getItem("words")) { 
-      const words = [];
-      const transcriptions = [];
-      const translations = [];
-      Object.keys(data).map((key) => {
-        words.push(data[key].english);
-        transcriptions.push(data[key].transcription);
-        translations.push(data[key].russian);
-      })
-      localStorage.setItem("words", words.join(","));
-      localStorage.setItem("transcriptions", transcriptions.join(","));
-      localStorage.setItem("translations", translations.join(","))}
-
-  /*useEffect(() => {
-    words = localStorage.getItem("words").split(",");
-    transcriptions = localStorage.getItem("transcriptions").split(",");
-    translations = localStorage.getItem("translations").split(",");
-  }, [localStorage.getItem("words") || localStorage.getItem("transcriptions") || localStorage.getItem("translations")])
-*/
   return (
     <div className={styles.table_container}>
       <Title title="Слова" />
@@ -52,20 +31,19 @@ const Table = memo(() => {
             <th>Перевод</th>
             <th />
           </tr>
-          {localStorage.getItem("words").split(",").map((word, i) => (
+          {words.map((word) => (
             <Row
-              key={`${word}-${i}`}
-              id={i}
-              word={localStorage.getItem("transcriptions").split(",")[i]}
-              transcription={localStorage.getItem("transcriptions").split(",")[i]}
-              translation={localStorage.getItem("translations").split(",")[i]}
-              //ref={ref}
+              key={word.id}
+              id={word.id}
+              word={word.english}
+              transcription={word.transcription}
+              translation={word.russian}
             />
           ))}
         </tbody>
       </table>
       <button className={styles.addingBtn} onClick={reverseAdding}>Добавить слово</button>
-      {adding && <AddingWord close={reverseAdding} />}
+      {adding && <AddingWordModal close={reverseAdding} />}
     </div>
   );
 })

@@ -1,0 +1,65 @@
+@import "variables.scss";
+
+.container {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(173, 173, 173, 0.555);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation-name: appear;
+    animation-duration: 300ms;
+}
+
+.window {
+    width: 40%;
+    margin: auto;
+    height: 31%;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid rgb(105, 105, 105);
+}
+
+.content {
+    width: 85%;
+    margin: auto;
+
+    p {
+        margin-top: 20px;
+        font-family: $font;
+        font-size: 1em;
+    }
+}
+
+.title {
+    font-size: 1.5em;
+    margin: 35px 0 15px;
+    font-family: $font;
+}
+
+.delete_btn,
+.cancel_btn {
+    height: 35px;
+    color: white;
+    font-family: $font;
+    font-size: 0.9em;
+    font-weight: 500;
+    border-radius: 3px;
+    margin-top: 10px;
+    padding: 0 13px;
+}
+
+.delete_btn {
+    background-color: rgb(161, 42, 42);
+    border: 1px solid rgb(160, 72, 87)
+}
+
+.cancel_btn {
+    background-color: rgba(107, 107, 107, 0.699);
+    border: 1px solid rgba(155, 155, 155, 0.445);
+    margin-left: 10px;
+}

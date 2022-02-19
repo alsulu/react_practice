@@ -15,6 +15,11 @@
     animation-duration: 300ms;
 }
 
+.input_container {
+    display: grid;
+    grid-template-columns: 30% 70%;
+}
+
 .window {
     width: 60%;
     margin: auto;
@@ -37,7 +42,7 @@
     }
 
     input {
-        width: 30%;
+        width: 100%;
         border-radius: 3px;
         height: 25px;
         font-family: $font;
@@ -45,19 +50,6 @@
         &:focus {
             border-color: rgba(255, 255, 255, 0);
         }
-    }
-
-    button {
-        width: 19%;
-        background-color: rgba(197, 71, 92, 0.815);
-        color: white;
-        font-family: $font;
-        font-size: 0.95em;
-        height: 35px;
-        font-weight: 500;
-        border: 1px solid rgb(182, 92, 107);
-        border-radius: 3px;
-        margin-top: 30px;
     }
 }
 
@@ -71,9 +63,39 @@
     border-color: rgb(211, 54, 54);
 }
 
+.error, .need_correct {
+    font-weight: 500;
+    margin-left: 25px;
+    font-size: 0.95em;
+}
+
 .error {
     color: rgb(211, 54, 54);
+}
+
+.need_correct {
+    color: green
+}
+
+.add_btn,
+.close_btn {
+    width: 18%;
+    color: white;
+    font-family: $font;
+    font-size: 0.95em;
+    height: 35px;
     font-weight: 500;
+    border-radius: 3px;
+    margin-top: 30px;
+}
+
+.add_btn {
+    background-color: rgba(197, 71, 92, 0.815);
+    border: 1px solid rgb(182, 92, 107);
+}
+
+.close_btn {
+    background-color: rgba(107, 107, 107, 0.699);
+    border: 1px solid rgba(141, 141, 141, 0.699);
     margin-left: 10px;
-    font-size: 1em;
 }

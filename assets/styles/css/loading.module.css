@@ -1,0 +1,34 @@
+.loading_container {
+  width: 70vw;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.loading_title {
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-weight: 600;
+  margin-top: 60px;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  white-space: pre-line;
+  color: #30292d;
+  text-align: center;
+}
+
+.loading_text {
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-size: 1.15em;
+  font-weight: 500;
+  margin-bottom: 95px;
+  color: #30292d;
+}
+/*# sourceMappingURL=loading.module.css.map */

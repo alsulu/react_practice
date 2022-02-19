@@ -1,0 +1,72 @@
+.container {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(173, 173, 173, 0.555);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-animation-name: appear;
+          animation-name: appear;
+  -webkit-animation-duration: 300ms;
+          animation-duration: 300ms;
+}
+
+.window {
+  width: 40%;
+  margin: auto;
+  height: 31%;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid dimgray;
+}
+
+.content {
+  width: 85%;
+  margin: auto;
+}
+
+.content p {
+  margin-top: 20px;
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-size: 1em;
+}
+
+.title {
+  font-size: 1.5em;
+  margin: 35px 0 15px;
+  font-family: "Montserrat", "Arial", sans-serif;
+}
+
+.delete_btn,
+.cancel_btn {
+  height: 35px;
+  color: white;
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-size: 0.9em;
+  font-weight: 500;
+  border-radius: 3px;
+  margin-top: 10px;
+  padding: 0 13px;
+}
+
+.delete_btn {
+  background-color: #a12a2a;
+  border: 1px solid #a04857;
+}
+
+.cancel_btn {
+  background-color: rgba(107, 107, 107, 0.699);
+  border: 1px solid rgba(155, 155, 155, 0.445);
+  margin-left: 10px;
+}
+/*# sourceMappingURL=confirmation.module.css.map */

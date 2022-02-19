@@ -52,13 +52,13 @@
   font-family: "Montserrat", "Arial", sans-serif;
   border: none;
   border-radius: 3px;
-  background-color: rgba(248, 227, 230, 0.555);
+  background-color: rgba(248, 227, 230, 0.705);
   height: 33px;
   padding: 0 15px;
 }
 
 .buttonShow:hover, .buttonShow:focus {
-  background-color: rgba(245, 212, 217, 0.555);
+  background-color: rgba(235, 180, 187, 0.541);
 }
 
 .buttonShow:active {

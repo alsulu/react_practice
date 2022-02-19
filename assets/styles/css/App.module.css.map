@@ -2,7 +2,7 @@
     "version": 3,
     "mappings": "AAAA,AAAA,IAAI,CAAC;EACH,UAAU,EAAE,KAAK;EACjB,OAAO,EAAE,IAAI;EACb,kBAAkB,EAAE,aAAa;CAClC",
     "sources": [
-        "../../../week_31/src/App.module.scss"
+        "../../../week_33/src/App.module.scss"
     ],
     "names": [],
     "file": "App.module.css"

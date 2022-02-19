@@ -2,8 +2,8 @@
     "version": 3,
     "mappings": "AAEA,AAAA,SAAS,CAAC;EACN,MAAM,EAAE,MAAM;EACd,WAAW,ECJR,YAAY,EAAE,OAAO,EAAE,UAAU;EDKpC,SAAS,EAAE,MAAM;EACjB,MAAM,EAAE,IAAI;EACZ,gBAAgB,EAAE,sBAAsB;EACxC,KAAK,EAAE,OAAe;CAKzB;;AAXD,AAQI,SARK,AAQJ,MAAM,CAAC;EACJ,gBAAgB,EAAE,0BAA0B;CAC/C",
     "sources": [
-        "../../../week_31/src/components/assets/styles/button.module.scss",
-        "../../../week_31/src/components/assets/styles/variables.scss"
+        "../../../week_33/src/components/assets/styles/button.module.scss",
+        "../../../week_33/src/components/assets/styles/variables.scss"
     ],
     "names": [],
     "file": "button.module.css"

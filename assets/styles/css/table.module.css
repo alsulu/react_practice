@@ -19,18 +19,23 @@ td {
   font-family: "Montserrat", "Arial", sans-serif;
 }
 
-th input,
-td input {
-  font-size: 0.95em;
-  font-family: "Montserrat", "Arial", sans-serif;
-  width: 100%;
-  border-radius: 3px;
-}
-
 table {
   border-spacing: 0;
   border-collapse: collapse;
   width: 65vw;
   margin: auto;
+}
+
+.addingBtn {
+  width: 19%;
+  background-color: rgba(192, 76, 95, 0.877);
+  color: white;
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-size: 0.95em;
+  height: 40px;
+  font-weight: 500;
+  border: 1px solid #b65c6b;
+  border-radius: 3px;
+  margin-top: 30px;
 }
 /*# sourceMappingURL=table.module.css.map */
