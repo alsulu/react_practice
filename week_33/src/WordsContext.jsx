@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import useReverse from "./hooks/useReverse";
 //import useError from "./hooks/useError";
 const WordsContext = React.createContext();
@@ -48,7 +48,8 @@ function WordsContextProvider({ children }) {
             transcription: transcription,
             russian: russian,
         }
-
+        
+        setIsLoading(true);
         fetch('/api/words/add', {
             method: 'POST',
             body: JSON.stringify(new_word),
@@ -56,10 +57,30 @@ function WordsContextProvider({ children }) {
                 'Content-Type': 'application/json'
             }
         })
-            .then((response) => response.json())
+            .then((response) => {
+                if (response.ok)
+                    return response.json();
+                else if (response.status < 400 && response.status >= 300)
+                    throw new Error('Ошибка перенаправления.')
+                else if (response.status >= 500)
+                    throw new Error('Ошибка на сервере. Не беспокойтесь, это не ваша вина.')
+                else switch (response.status) {
+                    case 400: throw new Error('Ошибка 400: Bad Request. \nЗапрос ошибочен. Проверьте формат запроса и состав параметров.');
+                    case 403: throw new Error('Ошибка 403: Forbidden \nНет прав для обработки запроса.'); 
+                    case 404: throw new Error('Ошибка 404: Not Found \nНе найден указанный метод.');
+                    case 413: throw new Error('Ошибка 413: Request Entity Too Large \nСлишком большой запрос, уменьшите его размер до 10MB.');
+                    case 429: throw new Error('Ошибка 429: Too many requests \nСлишком много запросов, уменьшите их частоту.');
+                    default: throw new Error('Ошибка');
+                }
+            })
             .then((response) => {
                 console.log(response);
                 getWords()
+            })
+            .catch((error) => {
+                setErrorMessage(error.message);
+                setError(true);
+                setIsLoading(false);
             })
     }
 
@@ -68,6 +89,7 @@ function WordsContextProvider({ children }) {
             id: id
         }
 
+        setIsLoading(true);
         fetch('/api/words/' + id + '/delete', {
             method: 'POST',
             body: JSON.stringify(deleting_word),
@@ -75,10 +97,30 @@ function WordsContextProvider({ children }) {
                 'Content-Type': 'application/json'
             }
         })
-            .then((response) => response.json())
+            .then((response) => {
+                if (response.ok)
+                    return response.json();
+                else if (response.status < 400 && response.status >= 300)
+                    throw new Error('Ошибка перенаправления.')
+                else if (response.status >= 500)
+                    throw new Error('Ошибка на сервере. Не беспокойтесь, это не ваша вина.')
+                else switch (response.status) {
+                    case 400: throw new Error('Ошибка 400: Bad Request. \nЗапрос ошибочен. Проверьте формат запроса и состав параметров.');
+                    case 403: throw new Error('Ошибка 403: Forbidden \nНет прав для обработки запроса.'); 
+                    case 404: throw new Error('Ошибка 404: Not Found \nНе найден указанный метод.');
+                    case 413: throw new Error('Ошибка 413: Request Entity Too Large \nСлишком большой запрос, уменьшите его размер до 10MB.');
+                    case 429: throw new Error('Ошибка 429: Too many requests \nСлишком много запросов, уменьшите их частоту.');
+                    default: throw new Error('Ошибка');
+                }
+            })
             .then((response) => {
                 console.log(response);
                 getWords()
+            })
+            .catch((error) => {
+                setErrorMessage(error.message);
+                setError(true);
+                setIsLoading(false);
             })
     }
 
@@ -92,6 +134,7 @@ function WordsContextProvider({ children }) {
             tags_JSON: ""
         }
 
+        setIsLoading(true);
         fetch('/api/words/' + id + '/update', {
             method: 'POST',
             body: JSON.stringify(editing_word),
@@ -99,10 +142,30 @@ function WordsContextProvider({ children }) {
                 'Content-Type': 'application/json'
             }
         })
-            .then((response) => response.json())
+            .then((response) => {
+                if (response.ok)
+                    return response.json();
+                else if (response.status < 400 && response.status >= 300)
+                    throw new Error('Ошибка перенаправления.')
+                else if (response.status >= 500)
+                    throw new Error('Ошибка на сервере. Не беспокойтесь, это не ваша вина.')
+                else switch (response.status) {
+                    case 400: throw new Error('Ошибка 400: Bad Request. \nЗапрос ошибочен. Проверьте формат запроса и состав параметров.');
+                    case 403: throw new Error('Ошибка 403: Forbidden \nНет прав для обработки запроса.'); 
+                    case 404: throw new Error('Ошибка 404: Not Found \nНе найден указанный метод.');
+                    case 413: throw new Error('Ошибка 413: Request Entity Too Large \nСлишком большой запрос, уменьшите его размер до 10MB.');
+                    case 429: throw new Error('Ошибка 429: Too many requests \nСлишком много запросов, уменьшите их частоту.');
+                    default: throw new Error('Ошибка');
+                }
+            })
             .then((response) => {
                 console.log(response);
                 getWords()
+            })
+            .catch((error) => {
+                setErrorMessage(error.message);
+                setError(true);
+                setIsLoading(false);
             })
     }
 

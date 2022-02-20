@@ -19,6 +19,12 @@ const SelectedCard = memo(() => {
     const [updatedCard, setUpdatedCard] = useState(1);
     const [count, setCount] = useState(0);
 
+    useEffect(() => {
+        getWords();
+        localStorage.getItem("count") &&
+            setCount(Number(localStorage.getItem("count")));
+    }, [])
+
     const handleClickNext = () => {
         currentCard = (currentCard + 1) % words.length;
         setSelectedCardIndex(currentCard);
@@ -52,11 +58,6 @@ const SelectedCard = memo(() => {
         setUpdatedCard(0);
     }, [count])
 
-    useEffect(() => {
-        getWords();
-        localStorage.getItem("count") &&
-            setCount(Number(localStorage.getItem("count")));
-    }, [])
 
     if (isLoading) 
         return <Loading />
