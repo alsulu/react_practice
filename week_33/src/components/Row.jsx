@@ -46,7 +46,7 @@ const Row = memo(({ word, transcription, translation, id }) => {
                                     : <span className={styles.error}>Поле не может быть пустым или содержать цифры.</span>)}
                         </td>
                         <td className={styles.edit}>
-                            <input type="text" name="translation" className={valid.translation || styles.invalid} value={values.translation} onChange={handleChange} />
+                            <input type="text" name="translation" className={valid.translation ? undefined : styles.invalid} value={values.translation} onChange={handleChange} />
                             {valid.translation || <span className={styles.error}>Поле заполнено неверно. Убедитесь, что вводите символы кириллицы.</span>}
                         </td>
                         <td className={classnames(styles.buttons, styles.edit)}>

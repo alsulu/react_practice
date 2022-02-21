@@ -1,4 +1,4 @@
-import React, { memo, useContext, useEffect } from "react";
+import React, { memo, useContext } from "react";
 import Row from "./Row";
 import Title from "./Title";
 import Error from "./Error";
@@ -9,10 +9,8 @@ import { WordsContext } from "../WordsContext";
 import Loading from "./Loading";
 
 const Table = memo(() => {
-  const { words, isLoading, getWords, error, errorMessage} = useContext(WordsContext);
+  const { words, isLoading, error, errorMessage} = useContext(WordsContext);
   const [adding, reverseAdding] = useReverse(false);
-  
-  useEffect(() => getWords(), [])
 
   if (isLoading)
     return <Loading />
