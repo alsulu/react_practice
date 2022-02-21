@@ -32,18 +32,18 @@ const Row = memo(({ word, transcription, translation, id }) => {
                     ? <React.Fragment>
                         <td className={styles.edit}>
                             <input type="text" name="word" className={valid.word ? undefined : styles.invalid} value={values.word} onChange={handleChange} />
-                            {valid.word || <span className={styles.error}>Убедитесь, что поле заполнено верно.</span>}
+                            {valid.word || <span className={styles.error}>Поле заполнено верно. Убедитесь, что вводите символы латиницы.</span>}
                         </td>
                         <td className={styles.edit}>
                             <input type="text" name="transcription" className={valid.transcription ? undefined : styles.invalid} value={values.transcription} onChange={handleChange} />
                             {isTranscriptionChanging && (
                                 valid.transcription
                                     ? <span className={styles.need_correct}>Для эффективного обучения убедитесь, что заполнили поле верно.</span> 
-                                    : <span className={styles.error}>Поле не может быть пустым.</span>)}
+                                    : <span className={styles.error}>Поле не может быть пустым или содержать цифры.</span>)}
                         </td>
                         <td className={styles.edit}>
                             <input type="text" name="translation" className={valid.translation || styles.invalid} value={values.translation} onChange={handleChange} />
-                            {valid.translation || <span className={styles.error}>Поле заполнено неверно.</span>}
+                            {valid.translation || <span className={styles.error}>Поле заполнено неверно. Убедитесь, что вводите символы кириллицы.</span>}
                         </td>
                         <td className={classnames(styles.buttons, styles.edit)}>
                             <button className={styles.btnSave} disabled={(valid.word && valid.transcription && valid.translation) ? false : "disabled"} 

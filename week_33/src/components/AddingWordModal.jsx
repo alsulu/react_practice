@@ -28,7 +28,7 @@ const AddingWordModal = memo(({close}) => {
                     <p>Слово на английском</p>
                     <div className={styles.input_container}>
                         <input type="text" name="word" className={valid.word ? undefined : styles.invalid} value={values.word} onChange={handleChange}/>
-                        {valid.word || <span className={styles.error}>Поле заполнено неверно.</span>}
+                        {valid.word || <span className={styles.error}>Поле заполнено неверно. Убедитесь, что вводите символы латиницы.</span>}
                     </div>
                     <p>Транскрипция</p>
                     <div className={styles.input_container}>
@@ -36,12 +36,12 @@ const AddingWordModal = memo(({close}) => {
                         {isTranscriptionChanging && (
                             valid.transcription 
                                 ? <span className={styles.need_correct}>Для эффективного обучения убедитесь, что заполнили поле верно.</span> 
-                                : <span className={styles.error}>Поле не может быть пустым.</span>)}
+                                : <span className={styles.error}>Поле не может быть пустым или содержать цифры.</span>)}
                     </div>
                     <p>Перевод</p>
                     <div className={styles.input_container}>
                         <input type="text" name="translation" className={valid.translation ? undefined : styles.invalid} value={values.translation} onChange={handleChange}/>
-                        {valid.translation || <span className={styles.error}>Поле заполнено неверно.</span>}
+                        {valid.translation || <span className={styles.error}>Поле заполнено неверно. Убедитесь, что вводите символы кириллицы.</span>}
                     </div>
                     <div>
                         <button className={styles.add_btn} onClick={() => {addNewWord(values.word, values.transcription, values.translation); close()}}>Добавить</button>
