@@ -1,0 +1,101 @@
+@import "variables.scss";
+
+.container {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(173, 173, 173, 0.555);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation-name: appear;
+    animation-duration: 300ms;
+}
+
+.input_container {
+    display: grid;
+    grid-template-columns: 30% 70%;
+}
+
+.window {
+    width: 60%;
+    margin: auto;
+    height: 70%;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid rgb(105, 105, 105);
+}
+
+.content {
+    width: 83%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+
+    p {
+        margin-bottom: 9px;
+        font-family: $font;
+        font-size: 1em;
+    }
+
+    input {
+        width: 100%;
+        border-radius: 3px;
+        height: 25px;
+        font-family: $font;
+
+        &:focus {
+            border-color: rgba(255, 255, 255, 0);
+        }
+    }
+}
+
+.title {
+    font-size: 1.5em;
+    margin: 55px 0 15px;
+    font-family: $font;
+}
+
+.invalid {
+    border-color: rgb(211, 54, 54);
+}
+
+.error, .need_correct {
+    font-weight: 500;
+    margin-left: 25px;
+    font-size: 0.95em;
+}
+
+.error {
+    color: rgb(211, 54, 54);
+}
+
+.need_correct {
+    color: green
+}
+
+.add_btn,
+.close_btn {
+    width: 18%;
+    color: white;
+    font-family: $font;
+    font-size: 0.95em;
+    height: 35px;
+    font-weight: 500;
+    border-radius: 3px;
+    margin-top: 30px;
+}
+
+.add_btn {
+    background-color: rgba(197, 71, 92, 0.815);
+    border: 1px solid rgb(182, 92, 107);
+}
+
+.close_btn {
+    background-color: rgba(107, 107, 107, 0.699);
+    border: 1px solid rgba(141, 141, 141, 0.699);
+    margin-left: 10px;
+}
