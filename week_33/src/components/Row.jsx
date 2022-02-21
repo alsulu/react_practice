@@ -24,6 +24,10 @@ const Row = memo(({ word, transcription, translation, id }) => {
         inputValidation(name, value);
         name === "transcription" && setIsTranscriptionChanging(true)
     }
+    const handleCancel = () => {
+        setChangeValues({ word: `${word}`, transcription: `${transcription}`, translation: `${translation}` });
+        reverseEdit();
+    }
 
     return (
         <React.Fragment>
@@ -48,7 +52,7 @@ const Row = memo(({ word, transcription, translation, id }) => {
                         <td className={classnames(styles.buttons, styles.edit)}>
                             <button className={styles.btnSave} disabled={(valid.word && valid.transcription && valid.translation) ? false : "disabled"} 
                                 onClick={() => {editWord(id, values.word, values.transcription, values.translation); reverseEdit()}}>Сохранить</button>
-                            <button className={styles.btnCancel} onClick={reverseEdit}>Отменить</button>
+                            <button className={styles.btnCancel} onClick={handleCancel}>Отменить</button>
                         </td>
                     </React.Fragment>
                     : <React.Fragment>
