@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-//import useError from "./hooks/useError";
+import useError from "./hooks/useError";
 const WordsContext = React.createContext();
 
 function WordsContextProvider({ children }) {
@@ -7,6 +7,11 @@ function WordsContextProvider({ children }) {
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
     const [errorMessage, setErrorMessage] = useState();
+    const [message, findError] = useError();
+
+    useEffect(() => {
+        setErrorMessage(message);
+    }, [message])
 
     useEffect(() => {
         const getWords = () => {
@@ -16,17 +21,9 @@ function WordsContextProvider({ children }) {
                     console.log(response);
                     if (response.ok)
                         return response.json();
-                    else if (response.status < 400 && response.status >= 300)
-                        throw new Error('Ошибка перенаправления.')
-                    else if (response.status >= 500)
-                        throw new Error('Ошибка на сервере. Не беспокойтесь, это не ваша вина.')
-                    else switch (response.status) {
-                        case 400: throw new Error('Ошибка 400: Bad Request. \nЗапрос ошибочен. Проверьте формат запроса и состав параметров.');
-                        case 403: throw new Error('Ошибка 403: Forbidden \nНет прав для обработки запроса.');
-                        case 404: throw new Error('Ошибка 404: Not Found \nНе найден указанный метод.');
-                        case 413: throw new Error('Ошибка 413: Request Entity Too Large \nСлишком большой запрос, уменьшите его размер до 10MB.');
-                        case 429: throw new Error('Ошибка 429: Too many requests \nСлишком много запросов, уменьшите их частоту.');
-                        default: throw new Error('Ошибка');
+                    else {
+                        findError(response.status)
+                        throw new Error('ошибка на веб-сервере');
                     }
                 })
                 .then((response) => {
@@ -35,7 +32,7 @@ function WordsContextProvider({ children }) {
                     setIsLoading(false);
                 })
                 .catch((error) => {
-                    setErrorMessage(error.message);
+                    console.log(error);
                     setError(true);
                     //setTimeout(() => setIsLoading(false), 5000);
                     setIsLoading(false);
@@ -61,17 +58,9 @@ function WordsContextProvider({ children }) {
             .then((response) => {
                 if (response.ok)
                     return response.json();
-                else if (response.status < 400 && response.status >= 300)
-                    throw new Error('Ошибка перенаправления.')
-                else if (response.status >= 500)
-                    throw new Error('Ошибка на сервере. Не беспокойтесь, это не ваша вина.')
-                else switch (response.status) {
-                    case 400: throw new Error('Ошибка 400: Bad Request. \nЗапрос ошибочен. Проверьте формат запроса и состав параметров.');
-                    case 403: throw new Error('Ошибка 403: Forbidden \nНет прав для обработки запроса.');
-                    case 404: throw new Error('Ошибка 404: Not Found \nНе найден указанный метод.');
-                    case 413: throw new Error('Ошибка 413: Request Entity Too Large \nСлишком большой запрос, уменьшите его размер до 10MB.');
-                    case 429: throw new Error('Ошибка 429: Too many requests \nСлишком много запросов, уменьшите их частоту.');
-                    default: throw new Error('Ошибка');
+                else {
+                    findError(response.status)
+                    throw new Error('ошибка на веб-сервере');
                 }
             })
             .then((response) => {
@@ -79,7 +68,7 @@ function WordsContextProvider({ children }) {
                 setWords([...words, new_word]);
             })
             .catch((error) => {
-                setErrorMessage(error.message);
+                console.log(error);
                 setError(true);
                 setIsLoading(false);
             })
@@ -100,17 +89,9 @@ function WordsContextProvider({ children }) {
             .then((response) => {
                 if (response.ok)
                     return response.json();
-                else if (response.status < 400 && response.status >= 300)
-                    throw new Error('Ошибка перенаправления.')
-                else if (response.status >= 500)
-                    throw new Error('Ошибка на сервере. Не беспокойтесь, это не ваша вина.')
-                else switch (response.status) {
-                    case 400: throw new Error('Ошибка 400: Bad Request. \nЗапрос ошибочен. Проверьте формат запроса и состав параметров.');
-                    case 403: throw new Error('Ошибка 403: Forbidden \nНет прав для обработки запроса.');
-                    case 404: throw new Error('Ошибка 404: Not Found \nНе найден указанный метод.');
-                    case 413: throw new Error('Ошибка 413: Request Entity Too Large \nСлишком большой запрос, уменьшите его размер до 10MB.');
-                    case 429: throw new Error('Ошибка 429: Too many requests \nСлишком много запросов, уменьшите их частоту.');
-                    default: throw new Error('Ошибка');
+                else {
+                    findError(response.status)
+                    throw new Error('ошибка на веб-сервере');
                 }
             })
             .then((response) => {
@@ -120,7 +101,7 @@ function WordsContextProvider({ children }) {
                 setWords([...words]);
             })
             .catch((error) => {
-                setErrorMessage(error.message);
+                console.log(error);
                 setError(true);
                 setIsLoading(false);
             })
@@ -146,17 +127,9 @@ function WordsContextProvider({ children }) {
             .then((response) => {
                 if (response.ok)
                     return response.json();
-                else if (response.status < 400 && response.status >= 300)
-                    throw new Error('Ошибка перенаправления.')
-                else if (response.status >= 500)
-                    throw new Error('Ошибка на сервере. Не беспокойтесь, это не ваша вина.')
-                else switch (response.status) {
-                    case 400: throw new Error('Ошибка 400: Bad Request. \nЗапрос ошибочен. Проверьте формат запроса и состав параметров.');
-                    case 403: throw new Error('Ошибка 403: Forbidden \nНет прав для обработки запроса.');
-                    case 404: throw new Error('Ошибка 404: Not Found \nНе найден указанный метод.');
-                    case 413: throw new Error('Ошибка 413: Request Entity Too Large \nСлишком большой запрос, уменьшите его размер до 10MB.');
-                    case 429: throw new Error('Ошибка 429: Too many requests \nСлишком много запросов, уменьшите их частоту.');
-                    default: throw new Error('Ошибка');
+                else {
+                    findError(response.status)
+                    throw new Error('ошибка на веб-сервере');
                 }
             })
             .then((response) => {
@@ -166,7 +139,7 @@ function WordsContextProvider({ children }) {
                 setWords(words.map(word => word.id === id ? editing_word : word))
             })
             .catch((error) => {
-                setErrorMessage(error.message);
+                console.log(error);
                 setError(true);
                 setIsLoading(false);
             })

@@ -9,7 +9,7 @@ import { WordsContext } from "../WordsContext";
 import Loading from "./Loading";
 
 const Table = memo(() => {
-  const { words, isLoading, error, errorMessage} = useContext(WordsContext);
+  const { words, isLoading, error, errorMessage } = useContext(WordsContext);
   const [adding, reverseAdding] = useReverse(false);
 
   if (isLoading)
