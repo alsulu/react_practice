@@ -65,7 +65,8 @@ function WordsContextProvider({ children }) {
             })
             .then((response) => {
                 console.log(response);
-                setWords([...words, new_word]);
+                const newword = {...new_word, id: response.id}
+                setWords([...words, newword]);
             })
             .catch((error) => {
                 console.log(error);
@@ -146,7 +147,7 @@ function WordsContextProvider({ children }) {
     }
 
     return (
-        <WordsContext.Provider value={{ words, isLoading, addNewWord, deleteWord, editWord, error, errorMessage }}>
+        <WordsContext.Provider value={{ words, isLoading, addNewWord, deleteWord, editWord, error, errorMessage, setError }}>
         {children}
         </WordsContext.Provider>
 

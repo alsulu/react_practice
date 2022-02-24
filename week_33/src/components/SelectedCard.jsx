@@ -13,13 +13,14 @@ const RotateInDownRight = styled.div`animation: 1s ${keyframes`${rotateInDownRig
 let currentCard = 0;
 
 const SelectedCard = memo(() => {
-    const { words, isLoading, error, errorMessage } = useContext(WordsContext);
+    const { words, isLoading, error, errorMessage, setError } = useContext(WordsContext);
 
     const [selectedCardIndex, setSelectedCardIndex] = useState(0);
     const [updatedCard, setUpdatedCard] = useState(1);
     const [count, setCount] = useState(0);
 
     useEffect(() => {
+        setError(false);
         localStorage.getItem("count") &&
             setCount(Number(localStorage.getItem("count")));
     }, [])
