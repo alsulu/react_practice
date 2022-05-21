@@ -5,19 +5,24 @@ input {
   font-family: $font;
   width: 100%;
   border-radius: 3px;
+  min-width: 60px;
 }
 
 .btnSave,
 .btnCancel {
   color: white;
-  font-size: 0.85em;
   font-weight: 500;
   font-family: $font;
+  font-size: 0.85em;
   padding: 0 10px;
 }
 
 .btnSave {
   background-color: rgb(27, 173, 27);
+
+  @media screen and (min-width: $minFull) {
+    width: 70px;
+  }
 
   &:disabled {
     opacity: 0.5;
@@ -30,18 +35,24 @@ input {
 }
 
 .btnEdit {
-  background-color: rgb(255, 180, 40);
   width: 30px;
+  background-color: rgb(255, 180, 40);
 }
 
 .btnDelete {
-  background-color: rgb(170, 64, 64);
   width: 30px;
+  background-color: rgb(170, 64, 64);
   margin-left: 5px;
 }
 
+
 .buttons {
   text-align: right;
+  min-width: 65px;
+
+  &.edit {
+    min-width: 130px;
+  }
 
   button {
     border: none;

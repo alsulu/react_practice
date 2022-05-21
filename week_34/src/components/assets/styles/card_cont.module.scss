@@ -1,10 +1,22 @@
 @import "variables.scss";
 
 .cards_container {
-  width: $width;
   margin: $marginCont;
   display: flex;
   flex-direction: column;
+
+  @media screen and (min-width: $minFull) {
+    width: $width;
+  }
+  @media screen and (min-width: $minLarge)  and (max-width: $maxLarge) {
+    width: $widthL;
+  }
+  @media screen and (min-width: $minMedium) and (max-width: $maxMedium) {
+    width: $widthM;
+  }
+  @media screen and (max-width: $maxSmall) {
+    width: $widthS;
+  }
 }
 
 .card {

@@ -1,37 +1,100 @@
 @import "variables.scss";
 
 .table_container {
-  width: $width;
-  margin: $marginCont;
   display: flex;
   flex-direction: column;
+  margin: $marginCont;
+
+  @media screen and (min-width: $minFull) {
+    width: $width;
+  }
+  @media screen and (min-width: $minLarge)  and (max-width: $maxLarge) {
+    width: $widthL;
+  }
+  @media screen and (min-width: $minMedium) and (max-width: $maxMedium) {
+    width: $widthM;
+  }
+  @media screen and (max-width: $maxSmall) {
+    width: $widthS;
+  }
 }
+
+/*
+  @media screen and (min-width: $minFull) {
+  }
+  @media screen and (min-width: $minLarge) and (max-width: $maxLarge) {
+  }
+  @media screen and (min-width: $minMedium) and (max-width: $maxMedium) {
+  }
+  @media screen and (max-width: $maxSmall) {
+  }
+*/
 
 th,
 td {
   border: 1px solid gray;
   width: 25%;
-  height: 40px;
   padding: 0 15px 0 10px;
   font-family: $font;
+
+  @media screen and (min-width: $minLarge) {
+    height: 40px;
+    font-size: 1em;
+  }
+  @media screen and (min-width: $minMedium) and (max-width: $maxMedium) {
+    height: 37px;
+    font-size: 1em;
+  }
+  @media screen and (max-width: $maxSmall) {
+    height: 35px;
+    font-size: 0.95em;
+  }
+}
+
+.table_wrapper {
+  width: 100%;
+  margin: auto;
+
+  @media screen and (max-width: $maxSmall) {
+    width: 98vw;
+    overflow-x: scroll;
+  }
 }
 
 table {
+  width: 100%;
   border-spacing: 0;
   border-collapse: collapse;
-  width: $width;
   margin: auto;
 }
 
 .addingBtn {
-  width: 19%;
   background-color: rgba(192, 76, 95, 0.877);
   color: white;
   font-family: $font;
-  font-size: 0.95em;
-  height: 40px;
   font-weight: 500;
   border: 1px solid rgb(182, 92, 107);
   border-radius: 3px;
   margin-top: 30px;
+
+  @media screen and (min-width: $minFull) {
+    width: 20%;
+    height: 40px;
+    font-size: 0.95em;
+  }
+  @media screen and (min-width: $minLarge)  and (max-width: $maxLarge){
+    width: 25%;
+    height: 40px;
+    font-size: 0.95em;
+  }
+  @media screen and (min-width: $minMedium) and (max-width: $maxMedium) {
+    width: 30vw;
+    height: 37px;
+    font-size: 0.9em;
+  }
+  @media screen and (max-width: $maxSmall) {
+    width: 45%;
+    height: 35px;
+    font-size: 0.9em;
+  }
 }

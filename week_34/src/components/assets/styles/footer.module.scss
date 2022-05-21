@@ -16,8 +16,21 @@ menu {
 }
 
 .footer {
-  width: $widthLarger;
   margin: auto;
+
+  @media screen and (min-width: $minFull) {
+    width: calc($width + 5vw);
+  }
+  @media screen and (min-width: $minLarge)  and (max-width: $maxLarge) {
+    width: calc($widthL + 5vw);
+  }
+  @media screen and (min-width: $minMedium) and (max-width: $maxMedium) {
+    width: calc($widthM + 5vw);
+  }
+  @media screen and (max-width: $maxSmall) {
+    width: calc($widthS - 5vw);
+    text-align: center;
+  }
 
   h4 {
     font-size: 15x;

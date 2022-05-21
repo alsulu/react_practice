@@ -1,10 +1,10 @@
-import React, { memo, useState, useContext } from "react";
+import React, { useState } from "react";
+import{ observer, inject } from "mobx-react";
+
 import useValid from '../hooks/useValid';
 import styles from "./assets/styles/adding_word.module.scss";
-import { WordsContext } from "../WordsContext";
 
-const AddingWordModal = memo(({close}) => {
-    const { addNewWord } = useContext(WordsContext);
+const AddingWordModal = ({ wordsStore, close} ) => {
 
     const [valid, inputValidation] = useValid();
     const [isTranscriptionChanging, setIsTranscriptionChanging] = useState(false);
@@ -18,6 +18,11 @@ const AddingWordModal = memo(({close}) => {
         })
         inputValidation(name, value);
         name === "transcription" && setIsTranscriptionChanging(true)
+    }
+
+    const addWord = () => {
+        wordsStore.addWord(values);
+        close();
     }
 
     return (
@@ -44,13 +49,13 @@ const AddingWordModal = memo(({close}) => {
                         {valid.translation || <span className={styles.error}>Поле заполнено неверно. Убедитесь, что вводите символы кириллицы.</span>}
                     </div>
                     <div>
-                        <button className={styles.add_btn} onClick={() => {addNewWord(values.word, values.transcription, values.translation); close()}}>Добавить</button>
+                        <button className={styles.add_btn} onClick={addWord}>Добавить</button>
                         <button className={styles.close_btn} onClick={close}>Закрыть</button>
                     </div>
                 </div>
             </div>
         </div>
     )
-})
+}
 
-export default AddingWordModal;
+export default inject(["wordsStore"])(observer(AddingWordModal));

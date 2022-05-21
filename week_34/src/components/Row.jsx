@@ -1,13 +1,13 @@
-import React, { useState, memo, useContext } from 'react';
+import React, { useState } from 'react';
+import{ observer, inject } from "mobx-react";
+
 import styles from './assets/styles/rows.module.scss';
 import classnames from 'classnames';
 import useReverse from '../hooks/useReverse';
 import useValid from '../hooks/useValid';
-import { WordsContext } from "../WordsContext";
 import ConfirmationModal from "./ConfirmationModal";
 
-const Row = memo(({ word, transcription, translation, id }) => {
-    const { editWord } = useContext(WordsContext);
+const Row = ({ wordsStore, word, transcription, translation, id }) => {
     const [deleting, reverseDeleting] = useReverse(false);
 
     const [edit, reverseEdit] = useReverse(false);
@@ -24,6 +24,12 @@ const Row = memo(({ word, transcription, translation, id }) => {
         inputValidation(name, value);
         name === "transcription" && setIsTranscriptionChanging(true)
     }
+
+    const handleEdit = () => {
+        wordsStore.editWord(id, values);
+        reverseEdit();
+    }
+
     const handleCancel = () => {
         setChangeValues({ word: `${word}`, transcription: `${transcription}`, translation: `${translation}` });
         reverseEdit();
@@ -46,13 +52,13 @@ const Row = memo(({ word, transcription, translation, id }) => {
                                     : <span className={styles.error}>Поле не может быть пустым или содержать цифры.</span>)}
                         </td>
                         <td className={styles.edit}>
-                            <input type="text" name="translation" className={valid.translation || styles.invalid} value={values.translation} onChange={handleChange} />
+                            <input type="text" name="translation" className={valid.translation ? undefined : styles.invalid} value={values.translation} onChange={handleChange} />
                             {valid.translation || <span className={styles.error}>Поле заполнено неверно. Убедитесь, что вводите символы кириллицы.</span>}
                         </td>
                         <td className={classnames(styles.buttons, styles.edit)}>
                             <button className={styles.btnSave} disabled={(valid.word && valid.transcription && valid.translation) ? false : "disabled"} 
-                                onClick={() => {editWord(id, values.word, values.transcription, values.translation); reverseEdit()}}>Сохранить</button>
-                            <button className={styles.btnCancel} onClick={handleCancel}>Отменить</button>
+                                onClick={handleEdit}>Save</button>
+                            <button className={styles.btnCancel} onClick={handleCancel}>Cancel</button>
                         </td>
                     </React.Fragment>
                     : <React.Fragment>
@@ -69,6 +75,6 @@ const Row = memo(({ word, transcription, translation, id }) => {
             {deleting && <ConfirmationModal id={id} cancel={reverseDeleting} />}
         </React.Fragment>
     )
-})
+}
 
-export default Row;
+export default inject(["wordsStore"])(observer(Row));

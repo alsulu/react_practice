@@ -1,10 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { Provider } from "mobx-react";
+
 import "./index.css";
 import App from "./App";
+import WordsStore from "./store/words";
 import reportWebVitals from "./reportWebVitals";
 import WebFont from "webfontloader";
-import { WordsContextProvider } from "./WordsContext";
 
 WebFont.load({
   google: {
@@ -12,10 +14,14 @@ WebFont.load({
   },
 });
 
+const store = {
+  wordsStore: new WordsStore(),
+};
+
 ReactDOM.render(
-  <WordsContextProvider>
+  <Provider {...store}>
     <App />
-  </WordsContextProvider>,
+  </Provider>,
   document.getElementById("root")
 );
 
