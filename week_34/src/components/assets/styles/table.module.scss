@@ -55,8 +55,15 @@ td {
   width: 100%;
   margin: auto;
 
+  @media screen and (min-width: $minLarge) {
+    margin-top: 40px;
+  }
+  @media screen and (min-width: $minMedium) and (max-width: $maxMedium) {
+    margin-top: 30px;
+  }
   @media screen and (max-width: $maxSmall) {
     width: 98vw;
+    margin-top: 25px;
     overflow-x: scroll;
   }
 }

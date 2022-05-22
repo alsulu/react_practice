@@ -1,14 +1,29 @@
 @import "variables.scss";
 
 .card {
-  width: 240px;
-  height: 240px;
   border: 1px solid gray;
   border-radius: 5px;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  @media screen and (min-width: $minFull) {
+    min-width: 37vh;
+    height: 40vh;
+  }
+  @media screen and (min-width: $minLarge) and (max-width: $maxLarge) {
+    min-width: 30vh;
+    height: 35vh;
+  }
+  @media screen and (min-width: $minMedium) and (max-width: $maxMedium) {
+    min-width: 30vh;
+    height: 35vh;
+  }
+  @media screen and (max-width: $maxSmall) {
+    width: 70vw;
+    height: 75vw;
+  }
 }
 
 .learnedCard {
@@ -18,8 +33,20 @@
 .word,
 .transcription {
   font-family: $font;
-  font-size: 1.2em;
   margin: 0 0 15px 0;
+
+  @media screen and (min-width: $minFull) {
+    font-size: 1.2em;
+  }
+  @media screen and (min-width: $minLarge) and (max-width: $maxLarge) {
+    font-size: 1.5em;
+  }
+  @media screen and (min-width: $minMedium) and (max-width: $maxMedium) {
+    font-size: 1.5em;
+  }
+  @media screen and (max-width: $maxSmall) {
+    font-size: 1.2em;
+  }
 }
 
 .word {
@@ -29,27 +56,54 @@
 .translation {
   margin: 30px 0 0 0;
   font-family: $font;
-  font-size: 1.2em;
   color: rgb(121, 36, 121);
   font-weight: 600;
+
+  @media screen and (min-width: $minFull) {
+    font-size: 1.2em;
+  }
+  @media screen and (min-width: $minLarge) and (max-width: $maxLarge) {
+    font-size: 1.5em;
+  }
+  @media screen and (min-width: $minMedium) and (max-width: $maxMedium) {
+    font-size: 1.5em;
+  }
+  @media screen and (max-width: $maxSmall) {
+    font-size: 1.2em;
+  }
 }
 
-.loading {
+/*.loading {
   font-family: $font;
   font-size: 1.15em;
   margin-bottom: 0;
-}
+}*/
 
 .buttonShow {
   margin-top: 10px;
-  font-size: 0.9em;
   font-weight: 500;
   font-family: $font;
   border: none;
   border-radius: 3px;
   background-color: rgba(248, 227, 230, 0.705);
-  height: 33px;
   padding: 0 15px;
+
+  @media screen and (min-width: $minFull) {
+    height: 33px;
+    font-size: 0.9em;
+  }
+  @media screen and (min-width: $minLarge) and (max-width: $maxLarge) {
+    height: 40px;
+    font-size: 1.1em;
+  }
+  @media screen and (min-width: $minMedium) and (max-width: $maxMedium) {
+    height: 40px;
+    font-size: 1.1em;
+  }
+  @media screen and (max-width: $maxSmall) {
+    height: 33px;
+    font-size: 0.95em;
+  }
 
   &:hover,
   &:focus {
@@ -62,13 +116,25 @@
 }
 
 .buttonCancel {
-  font-size: 0.9em;
   font-weight: 500;
   margin: 0;
   border: none;
   color: rgb(202, 48, 48);
   background-color: rgba(255, 255, 255, 0);
   font-family: $font;
+
+  @media screen and (min-width: $minFull) {
+    font-size: 0.9em;
+  }
+  @media screen and (min-width: $minLarge) and (max-width: $maxLarge) {
+    font-size: 1.1em;
+  }
+  @media screen and (min-width: $minMedium) and (max-width: $maxMedium) {
+    font-size: 1.1em;
+  }
+  @media screen and (max-width: $maxSmall) {
+    font-size: 0.9em;
+  }
 
   &:hover,
   &:focus {

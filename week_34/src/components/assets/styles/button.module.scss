@@ -1,12 +1,35 @@
 @import 'variables.scss';
 
 .arrowBtn {
-    margin: 0 15px;
     font-family: $font;
-    font-size: 2.25em;
     border: none;
     background-color: rgba(255, 255, 255, 0);
     color: rgb(88, 88, 88);
+
+    @media screen and (min-width: $minFull) {
+        height: 40vh;
+        margin: 0 15px;
+        font-size: 2.25em;
+        padding: 0 10px;
+    }
+    @media screen and (min-width: $minLarge) and (max-width: $maxLarge) {
+        height: 35vh;
+        margin: 0 15px;
+        font-size: 3em;
+        padding: 0 15px;
+    }
+    @media screen and (min-width: $minMedium) and (max-width: $maxMedium) {
+        height: 35vh;
+        margin: 0 15px;
+        font-size: 2.6em;
+        padding: 0 15px;
+    }
+    @media screen and (max-width: $maxSmall) {
+        height: 75vw;
+        margin: 0;
+        font-size: 2em;
+        padding: 0 10px;
+    }
 
     &:hover {
         background-color: rgba(233, 204, 221, 0.281);

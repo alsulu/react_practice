@@ -20,7 +20,7 @@
     margin: auto;
     display: flex;
     flex-direction: row;
-    column-gap: 35px;
+    column-gap: 5vw;
     font-family: $font;
     align-items: center;
     height: 100%;
@@ -28,14 +28,17 @@
     @media screen and (min-width: $minFull) {
       width: calc($width + 5vw);
       font-size: 1em;
+      //column-gap: 35px;
     }
     @media screen and (min-width: $minLarge)  and (max-width: $maxLarge) {
       width: calc($widthL + 5vw);
       font-size: 1em;
+      //justify-content: space-between;
     }
     @media screen and (min-width: $minMedium) and (max-width: $maxMedium) {
       width: calc($widthM + 5vw);
       font-size: 0.95em;
+      //justify-content: space-between;
     }
     @media screen and (max-width: $maxSmall) {
       width: $widthS;
@@ -47,6 +50,14 @@
       flex-direction: row;
       align-items: center;
       column-gap: 5px;
+
+      /*@media screen and (min-width: $minFull) {
+      }
+      @media screen and (min-width: $minMedium) and (max-width: $maxLarge) {
+        max-width: 45vw;
+      }
+      @media screen and (max-width: $maxSmall) {
+      }*/
     }
   }
 
@@ -67,6 +78,7 @@
     color: rgb(22, 22, 22);
     border-bottom: dotted 1px rgb(99, 99, 99);
     margin: 0;
+    white-space: nowrap;
 
     &:visited {
       color: rgb(22, 22, 22);
@@ -81,6 +93,7 @@
 
 .title {
   font-weight: 600;
+  white-space: pre-wrap;
 
   @media screen and (min-width: $minLarge) {
     font-size: 1em;

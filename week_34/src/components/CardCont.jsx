@@ -9,13 +9,15 @@ const CardCont = memo(({ children, onClickPrev, onClickNext, how, many, count })
     <div className={styles.cards_container}>
       <Title title={`Карточки (количество выученных слов: ${Number(count)} из ${many})`} />
       <div className={styles.card}>
-        <LeftArrow onClick={onClickPrev} />
-        {children}
-        <RightArrow onClick={onClickNext} />
+        <div className={styles.carousel}>
+          <LeftArrow onClick={onClickPrev} />
+          {children}
+          <RightArrow onClick={onClickNext} />
+        </div>
+        <span className={styles.counter}>
+          {how} / {many}
+        </span>
       </div>
-      <span>
-        {how} / {many}
-      </span>
     </div>
   );
 })
