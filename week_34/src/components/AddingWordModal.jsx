@@ -29,7 +29,7 @@ const AddingWordModal = ({ wordsStore, close} ) => {
         <div className={styles.container}>
             <div className={styles.window}>
                 <div className={styles.content}>
-                    <h2 className={styles.title}>Новое слово</h2>
+                    <h2 className={styles.title}>Добавить новое слово</h2>
                     <p>Слово на английском</p>
                     <div className={styles.input_container}>
                         <input type="text" name="word" className={valid.word ? undefined : styles.invalid} value={values.word} onChange={handleChange}/>

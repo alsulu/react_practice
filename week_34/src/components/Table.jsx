@@ -11,6 +11,7 @@ import Loading from "./Loading";
 
 const Table = ({ wordsStore }) => {
   const [adding, reverseAdding] = useReverse(false);
+  const [saving, reverseSaving] = useReverse(false);
   
   useEffect(() => wordsStore.getWords(), [])
   

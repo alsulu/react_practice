@@ -1,21 +1,27 @@
 @import "variables.scss";
 
 .error_cont {
-  width: $width;
+  height: 100%;
   margin: $marginCont;
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media screen and (min-width: $minFull) {
+    width: $width;
+  }
+  @media screen and (min-width: $minLarge)  and (max-width: $maxLarge) {
+    width: $widthL;
+  }
+  @media screen and (min-width: $minMedium) and (max-width: $maxMedium) {
+    width: $widthM;
+  }
+  @media screen and (max-width: $maxSmall) {
+    width: $widthS;
+  }
 }
 
 .error_title {
-  font-family: $font;
-  font-weight: 600;
-  margin-top: 45px;
-  margin-bottom: 20px;
-  font-size: 1.5em;
-  white-space: pre-line;
-  color: rgb(48, 41, 45);
   text-align: center;
 }
 
@@ -38,15 +44,30 @@
 }
 
 .error {
-  height: 450px;
   grid-area: 1/1/4/2;
+  min-height: 45vw;
+
+  @media screen and (min-width: $minFull) {
+    height: 45vh;
+  }
+  @media screen and (min-width: $minLarge)  and (max-width: $maxLarge) {
+    height: 50vh;
+  }
+  @media screen and (min-width: $minMedium) and (max-width: $maxMedium) {
+    height: 55vh;
+  }
+  @media screen and (max-width: $maxSmall) {
+    height: $widthS;
+  }
 }
 
 .image {
   display: grid;
   grid-template-rows: 3fr 35px 1fr;
-  height: 450px;
-  width: 450px;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
 }
 
 .credit {
@@ -54,15 +75,33 @@
   opacity: 0;
   background: rgba(211, 211, 211, 0.884);
   color: black;
-  font-size: 16px;
   font-family: $font;
   padding: 5px;
-  margin-left: 150px;
-  width: 365px;
   align-self: center;
   text-decoration: none;
   grid-area: 2/1/3/2;
   border-radius: 3px;
+
+  @media screen and (min-width: $minFull) {
+    margin-left: 10%;
+    max-width: 80%;
+    font-size: 1em;
+  }
+  @media screen and (min-width: $minLarge) and (max-width: $maxLarge) {
+    margin-left: 10%;
+    max-width: 80%;
+    font-size: 1em;
+  }
+  @media screen and (min-width: $minMedium) and (max-width: $maxMedium) {
+    margin-left: 10%;
+    max-width: 80%;
+    font-size: 1em;
+  }
+  @media screen and (max-width: $maxSmall) {
+    margin-left: 10%;
+    max-width: 80%;
+    font-size: 0.85em;
+  }
 }
 
 .image:hover .credit {

@@ -145,6 +145,19 @@ export default class WordsStore {
             .then(() => {
                 const index = this.words.findIndex(item => item.id === id);
                 this.words.splice(index, 1);
+
+                if (localStorage.getItem("learnedCards")) {
+                    const learnedCards = localStorage.getItem("learnedCards").split(",");
+                    const indexLocal = learnedCards.indexOf(id);
+                    if (indexLocal > -1) {
+                        learnedCards.splice(indexLocal, 1);
+                        localStorage.setItem("learnedCards", learnedCards.join(","));
+                        
+                        const k = localStorage.getItem("count");
+                        console.log(k);
+                        localStorage.setItem("count", k-1)
+                    }
+                }
             })
             .catch((error) => {
                 console.log(error);

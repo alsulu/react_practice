@@ -10,7 +10,7 @@
     height: 60px;
   }
   @media screen and (min-width: $minMedium) and (max-width: $maxMedium) {
-    height: 55px;
+    height: 60px;
   }
   @media screen and (max-width: $maxSmall) {
     height: 50px;
@@ -94,6 +94,7 @@
 .title {
   font-weight: 600;
   white-space: pre-wrap;
+  color: rgb(48, 41, 45);
 
   @media screen and (min-width: $minLarge) {
     font-size: 1em;

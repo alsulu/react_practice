@@ -16,12 +16,29 @@
 }
 
 .window {
-    width: 40%;
+    display: flex;
+    flex-direction: row;
     margin: auto;
-    height: 31%;
     background-color: white;
     border-radius: 5px;
     border: 1px solid rgb(105, 105, 105);
+
+    @media screen and (min-width: $minFull) {
+        width: 40%;
+        padding: 4% 0;
+    }
+    @media screen and (min-width: $minLarge) and (max-width: $maxLarge) {
+        width: 60%;
+        padding: 5% 0;
+    }
+    @media screen and (min-width: $minMedium) and (max-width: $maxMedium) {
+        width: 70%;
+        padding: 7% 0;
+    }
+    @media screen and (max-width: $maxSmall) {
+        width: 90%;
+        padding: 10% 0;
+    }
 }
 
 .content {
@@ -36,14 +53,27 @@
 }
 
 .title {
-    font-size: 1.5em;
-    margin: 35px 0 15px;
     font-family: $font;
+    margin-top: 0;
+
+    @media screen and (min-width: $minFull) {
+        font-size: 1.5em;
+        //margin: 35px 0 15px;
+    }
+    @media screen and (min-width: $minLarge) and (max-width: $maxLarge) {
+        font-size: 1.45em;
+    }
+    @media screen and (min-width: $minMedium) and (max-width: $maxMedium) {
+        font-size: 1.4em;
+    }
+    @media screen and (max-width: $maxSmall) {
+        font-size: 1.2em;
+    }
 }
 
 .delete_btn,
 .cancel_btn {
-    height: 35px;
+    height: 33px;
     color: white;
     font-family: $font;
     font-size: 0.9em;
@@ -51,6 +81,10 @@
     border-radius: 3px;
     margin-top: 10px;
     padding: 0 13px;
+
+    @media screen and (max-width: $maxSmall) {
+        font-size: 0.85em;
+    }
 }
 
 .delete_btn {

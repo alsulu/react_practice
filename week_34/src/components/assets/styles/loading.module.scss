@@ -6,12 +6,15 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 100%;
+    justify-content: center;
 }
 
 .loading_title {
     font-family: $font;
     font-weight: 600;
-    margin-top: 60px;
+    //margin-top: 60px;
+    margin-top: 0;
     margin-bottom: 10px;
     font-size: 1.5em;
     white-space: pre-line;

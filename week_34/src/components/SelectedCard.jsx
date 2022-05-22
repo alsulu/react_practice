@@ -42,7 +42,7 @@ const SelectedCard = ({ wordsStore }) => {
 
     const wordsCount = useCallback((e) => {
         setCount(count+1);
-        localStorage.setItem("count", count+1)
+        localStorage.setItem("count", count+1);
 
         let learnedCards = localStorage.getItem("learnedCards") ? localStorage.getItem("learnedCards").split(",") : [];
         learnedCards.push(e.target.dataset.id);
@@ -53,7 +53,7 @@ const SelectedCard = ({ wordsStore }) => {
 
     const wordCancel = useCallback((e) => {
         setCount(count-1);
-        localStorage.setItem("count", count-1)
+        localStorage.setItem("count", count-1);
 
         let learnedCards = localStorage.getItem("learnedCards").split(",");
         const index = learnedCards.indexOf(e.target.dataset.id);

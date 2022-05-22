@@ -2,6 +2,7 @@ import React, { Fragment, memo, useEffect } from "react";
 import{ observer, inject } from "mobx-react";
 
 import styles from "./assets/styles/error.module.scss";
+import Title from "./Title";
 import imgError from "./assets/images/NotFound.jpg";
 import useReverse from '../hooks/useReverse';
 import useError from '../hooks/useError';
@@ -16,14 +17,14 @@ const Error = ({ wordsStore }) => {
     <div className={styles.error_cont}>
       {wordsStore.errorStatus === 200
         ? <Fragment>
-        <h2 className={styles.error_title}>404 Error. Sorry, the page you're looking for doesn't exist :(</h2>
+        <Title className={styles.error_title} title={"404 Error. Sorry, the page you're looking for doesn't exist :("} />
         {shower 
           ? <p className={styles.russianError}>Ошибка 404. Извините, страница, которую вы ищите, не существует :(</p>
           : <button className={styles.buttonTranslate} onClick={reverseShower}>Попробуйте перевести сообщение об ошибке и нажмите, чтобы проверить
             себя</button>
         }
       </Fragment>
-        : <h2 className={styles.error_title}>{message}</h2>
+        : <Title className={styles.error_title} title={message} />
       }
       <div className={styles.image}>
         <img src={imgError} alt="error" className={styles.error} />

@@ -7,11 +7,10 @@ import useReverse from '../hooks/useReverse';
 import useValid from '../hooks/useValid';
 import ConfirmationModal from "./ConfirmationModal";
 
-const Row = ({ wordsStore, word, transcription, translation, id }) => {
+const Row = ({ wordsStore, word, transcription, translation, id, editing }) => {
     const [deleting, reverseDeleting] = useReverse(false);
-
     const [edit, reverseEdit] = useReverse(false);
-    const [valid, inputValidation] = useValid();
+    const [valid, inputValidation, changeValid] = useValid();
     const [isTranscriptionChanging, setIsTranscriptionChanging] = useState(false);
     const [values, setChangeValues] = useState({ word: `${word}`, transcription: `${transcription}`, translation: `${translation}` });
 
@@ -33,6 +32,8 @@ const Row = ({ wordsStore, word, transcription, translation, id }) => {
     const handleCancel = () => {
         setChangeValues({ word: `${word}`, transcription: `${transcription}`, translation: `${translation}` });
         reverseEdit();
+        changeValid({ word: true, transcription: true, translation: true });
+        setIsTranscriptionChanging(false)
     }
 
     return (
@@ -72,7 +73,7 @@ const Row = ({ wordsStore, word, transcription, translation, id }) => {
                     </React.Fragment>
                 }
             </tr>
-            {deleting && <ConfirmationModal id={id} cancel={reverseDeleting} />}
+            {deleting && <ConfirmationModal id={id} cancel={reverseDeleting} title={"Подтвердить удаление"} comment={"Вы уверены, что хотите удалить выбранное слово?"} btnName={"Удалить"} />}
         </React.Fragment>
     )
 }

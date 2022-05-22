@@ -83,6 +83,7 @@ table {
   border: 1px solid rgb(182, 92, 107);
   border-radius: 3px;
   margin-top: 30px;
+  white-space: nowrap;
 
   @media screen and (min-width: $minFull) {
     width: 20%;
